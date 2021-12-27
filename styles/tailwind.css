@@ -84,3 +84,7 @@
 .filter {
   filter: var(--tw-filter)
 }
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer
+}

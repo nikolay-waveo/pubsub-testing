@@ -23,7 +23,7 @@ const Options: React.FC<IOptions> = ({
   const togglePopoverActive = useCallback(() => setPopoverActive(popoverActive => !popoverActive), []);
 
   const activator = <button 
-    className=""
+    className="border-none bg-transparent hover:cursor-pointer"
     onClick={togglePopoverActive}> 
       <Icon
         source={MobileVerticalDotsMajor}
