@@ -17,8 +17,12 @@ const Index: React.FC = () => {
   const shop = router.query.shop as string
 
   const [user, setUser] = useState(shop)
-  const [publishedTo, setPublishedTo] = useState<TSubscription['subscription'][]>([]);
-  const [subscribedTo, setSubscribedTo] = useState<TSubscription['subscription'][]>([]);
+  const [publishedTo, setPublishedTo] = useState<TSubscription['subscription'][]>([
+    {storeURL: 'test', id: '000', status: 'pending'}
+  ]);
+  const [subscribedTo, setSubscribedTo] = useState<TSubscription['subscription'][]>([
+    {storeURL: 'test', id: '000', status: 'pending'}
+  ]);
   const [publishStatus, setPublishStatus] = useState(false)
 
 

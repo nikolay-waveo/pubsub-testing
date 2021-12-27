@@ -6,6 +6,7 @@ import {
 // import { usePublish } from 'hooks/usePublish';
 // import { useSubscribe } from 'hooks/useSubscribe';
 import React, { useCallback, useEffect, useState } from 'react';
+import Item from './Item';
 // import { IList, ISubscription } from 'types';
 // import Item from './Item';
 import Modal from './Modal';
@@ -301,7 +302,7 @@ const List: React.FC<IList> = ({
               <ResourceItem
                 id={item.id}
                 onClick={() => {}}>
-                  {/* <Item
+                  <Item
                     item={item} 
                     loading={{
                       isLoading: isLoading,
@@ -334,17 +335,19 @@ const List: React.FC<IList> = ({
                         content: 'Connect',
                         helpText: "Accept subscription to your store",
                         icon: TickMinor,
-                        onAction: () => onConnect(item),
+                        onAction: () => {},
+                          // onConnect(item),
                         active: true,
                       },
                       {
                         content: 'Disconnect',
                         helpText: "Deny subscription to your store",
                         icon: CancelSmallMinor,
-                        onAction: () => onDisconnect(item),
+                        onAction: () => {},
+                          // onDisconnect(item),
                         destructive: true,
                       },
-                    ]} /> */}
+                    ]} />
                 </ResourceItem> 
               )
           }} />
