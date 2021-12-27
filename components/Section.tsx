@@ -1,6 +1,7 @@
 import { Heading, Layout, SettingToggle, TextContainer, TextStyle } from '@shopify/polaris';
 // import { useSettings } from 'hooks/useSettings';
 import React, { useCallback, useEffect, useState } from 'react';
+import CalloutCard from './CalloutCard';
 import Modal from './Modal';
 // import { ISection } from 'types';
 // import CalloutCard from './CalloutCard';
@@ -119,7 +120,7 @@ const Section: React.FC<ISection> = ({
               { toggleTextMarkup() }
             </SettingToggle> 
 
-            {/* { active && 
+            { active && 
               showCalloutCard &&
               <CalloutCard 
                 title="Get your store link"
@@ -129,7 +130,7 @@ const Section: React.FC<ISection> = ({
                   content: 'Get store link',
                   onAction: () => setShowCalloutCardModal(true),
                 }} 
-                onDismiss={() => setShowCalloutCard(false)} /> } */}
+                onDismiss={() => setShowCalloutCard(false)} /> }
 
             <Modal 
               title="Get your store link"
@@ -141,9 +142,10 @@ const Section: React.FC<ISection> = ({
               }
               isModalOpen={showCalloutCardModal}
               modalHandler={setShowCalloutCardModal} 
+// Polaris blocks this action
               primaryAction={{
                 actionText: "Copy Link",
-                actionHandler: () => {
+                actionHandler: (e) => {
                   navigator.clipboard.writeText(user)
                   setShowCalloutCardModal(false)
                 },
