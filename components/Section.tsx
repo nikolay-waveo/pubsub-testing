@@ -1,6 +1,7 @@
 import { Heading, Layout, SettingToggle, TextContainer, TextStyle } from '@shopify/polaris';
 // import { useSettings } from 'hooks/useSettings';
 import React, { useCallback, useEffect, useState } from 'react';
+import Modal from './Modal';
 // import { ISection } from 'types';
 // import CalloutCard from './CalloutCard';
 // import Modal from './Modal';
@@ -42,29 +43,29 @@ const Section: React.FC<ISection> = ({
     setActive(publishStatus)
   }, [publishStatus])
 
-  // const handleDeactivatePublish = useCallback(
-  //   () => {
-  //     setSettings(user, {
-  //       publish: false
-  //     })
-  //     setActive(false)
-  //     setShowDeactivationModal(false)
-  //   },
-  //   [setSettings, user],
-  // )
+  const handleDeactivatePublish = useCallback(
+    () => {
+      // setSettings(user, {
+      //   publish: false
+      // })
+      setActive(false)
+      setShowDeactivationModal(false)
+    },
+    [user],
+  )
 
-  // const handleToggle = useCallback(() => {
-  //   if(enableModal && active) {
-  //     setShowDeactivationModal(true)
-  //   }
-  //   else {
-  //     setSettings(user, {
-  //       publish: !active
-  //     })
-  //     setActive(!active)
-  //     setShowCalloutCard(!active)
-  //   }  
-  // }, [active, enableModal, setSettings, user]);
+  const handleToggle = useCallback(() => {
+    if(enableModal && active) {
+      setShowDeactivationModal(true)
+    }
+    else {
+      // setSettings(user, {
+      //   publish: !active
+      // })
+      setActive(!active)
+      setShowCalloutCard(!active)
+    }  
+  }, [active, enableModal, user]);
 
   const contentStatus = active ? 'Deactivate' : 'Activate';
 
@@ -107,7 +108,7 @@ const Section: React.FC<ISection> = ({
         title={sectionTitle}
         description={sectionDescription} >
 
-        {/* { toggle &&
+        { toggle &&
           <div className={active ? "mb-10" : undefined}>
             <SettingToggle
               action={{
@@ -118,7 +119,7 @@ const Section: React.FC<ISection> = ({
               { toggleTextMarkup() }
             </SettingToggle> 
 
-            { active && 
+            {/* { active && 
               showCalloutCard &&
               <CalloutCard 
                 title="Get your store link"
@@ -128,7 +129,7 @@ const Section: React.FC<ISection> = ({
                   content: 'Get store link',
                   onAction: () => setShowCalloutCardModal(true),
                 }} 
-                onDismiss={() => setShowCalloutCard(false)} /> }
+                onDismiss={() => setShowCalloutCard(false)} /> } */}
 
             <Modal 
               title="Get your store link"
@@ -179,7 +180,7 @@ const Section: React.FC<ISection> = ({
                 content: "Publishing Disabled"
               }}
               />
-          </div> } */}
+          </div> }
 
         { active && <div className="col-span-2" > { children } </div> }
       </Layout.AnnotatedSection>
