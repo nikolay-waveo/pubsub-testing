@@ -18,10 +18,10 @@ const Index: React.FC = () => {
 
   const [user, setUser] = useState(shop)
   const [publishedTo, setPublishedTo] = useState<TSubscription['subscription'][]>([
-    {storeURL: 'test', id: '000', status: 'pending'}
+    // {storeURL: 'test', id: '000', status: 'pending'}
   ]);
   const [subscribedTo, setSubscribedTo] = useState<TSubscription['subscription'][]>([
-    {storeURL: 'test', id: '000', status: 'pending'}
+    // {storeURL: 'test', id: '000', status: 'pending'}
   ]);
   const [publishStatus, setPublishStatus] = useState(false)
 

@@ -60,7 +60,6 @@ class MyApp extends App {
       host: host,
       forceRedirect: true,
     }
-    console.log(config)
 
     return (
       // <SWRConfig
