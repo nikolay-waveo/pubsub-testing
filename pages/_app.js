@@ -8,6 +8,7 @@ import { Redirect } from "@shopify/app-bridge/actions";
 import "@shopify/polaris/dist/styles.css";
 import translations from "@shopify/polaris/locales/en.json";
 import { SWRConfig } from "swr";
+import "../styles/tailwind.css";
 
 function userLoggedInFetch(app) {
   const fetchFunction = authenticatedFetch(app);

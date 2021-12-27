@@ -31,7 +31,7 @@ const Index: React.FC = () => {
       <Page
         title="Store Product Sync"
         fullWidth={true}>
-        <div>
+        <div className="grid grid-cols-1 gap-10 mb-20">
           <Section 
             user={user}
             sectionTitle="Publish"
