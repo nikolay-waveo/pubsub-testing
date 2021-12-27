@@ -1,5 +1,5 @@
-import { Frame, Heading, Page, Subheading } from "@shopify/polaris";
-import React, { useEffect, useState } from "react";
+import { Frame, Page, } from "@shopify/polaris";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Section from "../components/Section";
 import List from "../components/List";
