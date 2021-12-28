@@ -53,11 +53,11 @@ function MyProvider(props) {
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, host } = this.props;
+    const { Component, pageProps } = this.props;
 
     const config = {
       apiKey: API_KEY,
-      host: host,
+      host: Buffer.from(HOST_URL).toString("base64"),
       forceRedirect: true,
     }
 
